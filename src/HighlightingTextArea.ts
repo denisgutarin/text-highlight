@@ -1,6 +1,6 @@
-import classes from "./TextArea.module.css";
+import classes from "./HighlightingTextArea.module.css";
 
-export class TextArea {
+export class HighlightingTextArea {
   editor;
   container;
   overlay;
@@ -8,7 +8,7 @@ export class TextArea {
   constructor(selector: string) {
     const editor = document.querySelector<HTMLTextAreaElement>(selector);
     if (!editor) {
-      throw new Error("Cannot find selector for the textarea");
+      throw new Error("Cannot find element by selector ");
     }
     this.editor = editor;
 

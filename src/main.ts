@@ -1,8 +1,8 @@
-import { TextArea } from "./TextArea";
+import { HighlightingTextArea } from "./HighlightingTextArea";
 import "./index.css";
 
 const searchField = document.querySelector<HTMLInputElement>("#search-field");
-const textArea = new TextArea(".editor");
+const textArea = new HighlightingTextArea(".editor");
 
 textArea.setText(
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla finibus elit, at fermentum magna tincidunt at. Vivamus blandit aliquam feugiat. In et dignissim sem, nec sagittis neque. Aenean euismod sem id ex bibendum lobortis. Aenean vel mattis mauris. In viverra purus in sagittis tempus. Suspendisse sagittis blandit enim ac pharetra. Vestibulum et bibendum nulla, vel commodo sem. Vivamus purus odio, posuere vitae bibendum id, convallis quis diam. Nullam nec eros vitae ligula convallis gravida quis at neque. Duis sagittis ullamcorper est, ac varius leo.\n\n" +
@@ -12,8 +12,12 @@ textArea.setText(
     "Donec nec elit sit amet leo lacinia tristique vitae fermentum tellus. Nullam vel vulputate diam. Pellentesque elementum vel purus eu ultricies. Vestibulum volutpat bibendum dapibus. Duis finibus lobortis metus, ac aliquet magna vulputate finibus. Fusce quam nulla, euismod vitae tempus ut, dignissim vitae risus. Vivamus fringilla mauris non ligula lobortis efficitur. Nunc finibus dui et mattis sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean non rhoncus eros."
 );
 
-searchField?.addEventListener("input", () => {
+searchField?.addEventListener("input", highlightSearch);
+
+highlightSearch();
+
+function highlightSearch() {
   const searchPhrase = searchField?.value?.trim() ?? "";
 
   textArea.highlight(searchPhrase);
-});
+}
