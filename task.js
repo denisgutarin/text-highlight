@@ -42,7 +42,6 @@ function Highlighter() {
       searchPhrase,
       `<span class="highlight">${searchPhrase}</span>`
     );
-    //   .replaceAll("\n", "<br />");
   }
 
   return {
