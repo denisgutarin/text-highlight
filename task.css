@@ -57,6 +57,7 @@ input {
   color: rgba(0, 0, 0, 0);
 
   overflow-y: hidden;
+  white-space: pre-wrap;
 }
 
 .highlight {
