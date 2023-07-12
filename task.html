@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TextArea Search</title>
+    <link rel="stylesheet" href="task.css" />
+  </head>
+
+  <body>
+    <div class="search">
+      <input
+        type="text"
+        id="search-field"
+        value="ipsum"
+        oninput="highlighter.onInput(event)"
+      />
+    </div>
+    <div class="text-container">
+      <div class="overlay"></div>
+      <textarea
+        class="editor"
+        spellcheck="true"
+        onscroll="highlighter.onScroll(event)"
+        oninput="highlighter.onInput(event)"
+      >
+      </textarea>
+    </div>
+  </body>
+  <script type="application/javascript" src="task.js"></script>
+</html>
